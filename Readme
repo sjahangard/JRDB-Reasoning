@@ -1,1 +1,65 @@
+# JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics
+
+## Overview
+JRDB-Reasoning is a difficulty-graded benchmark designed to evaluate visual reasoning
+capabilities in real-world robotic perception systems. Built on top of the JRDB dataset,
+the benchmark introduces structured spatial-temporal reasoning tasks for
+Visual Grounding (VG) and Visual Question Answering (VQA), with explicit control over
+spatial and temporal complexity.
+
+The benchmark aims to facilitate systematic evaluation of reasoning-based perception
+models in robotics, beyond pure detection and tracking.
+
+---
+
+## Key Features
+- Difficulty-graded reasoning tasks with controllable spatial and temporal complexity
+- Support for Visual Grounding (VG) and Visual Question Answering (VQA)
+- Spatial-temporal scene graph construction from robotic sensor data
+- Designed for real-world, human-centric robotic environments
+
+---
+
+## Code Structure
+- `Main.py`  
+  Entry point for dataset generation and task construction.
+
+- `graph.py`  
+  Spatial-temporal scene graph construction and entity-relation modeling.
+
+- `VG_task.py`  
+  Visual Grounding task generation logic.
+
+- `VQA_task.py`  
+  Visual Question Answering task generation logic (Wh- and Count-type questions).
+
+- `Classes.py`  
+  Core data structures used for representing reasoning samples.
+
+- `global_functions.py`  
+  Helper and utility functions used across the pipeline.
+
+- `Category.py`  
+  Definition of semantic categories, attributes, and reasoning vocabularies.
+
+---
+
+## Setup
+
+### Requirements
+Python 3.8+ is recommended.
+
+Install dependencies using:
+```bash
+pip install -r requirements.txt
+
+### Download the Dataset
+
+Please download the JRDB dataset directly from the official website:
+
+👉 https://jrdb.erc.monash.edu/
+
+You need to register and obtain access in order to download the dataset.
+After downloading, set the local dataset paths in `config.local.yaml`
+(or update `data_root` in `config.example.yaml`) before running the code.
 
