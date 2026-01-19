@@ -1,7 +1,6 @@
-<p align="center">
-  <img src="Figs/rabbit.png" width="700" />
-</p>
+
 # JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics
+
 
 ## Overview
 JRDB-Reasoning is a difficulty-graded benchmark designed to evaluate visual reasoning
@@ -12,6 +11,7 @@ spatial and temporal complexity.
 
 The benchmark aims to facilitate systematic evaluation of reasoning-based perception
 models in robotics, beyond pure detection and tracking.
+
 
 ---
 
@@ -65,6 +65,7 @@ Please download the JRDB dataset directly from the official website:
 You need to register and obtain access in order to download the dataset.
 After downloading, set the local dataset paths in `config.local.yaml`
 (or update `data_root` in `config.example.yaml`) before running the code.
+
 
 
 
