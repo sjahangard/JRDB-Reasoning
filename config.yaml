@@ -10,13 +10,13 @@ folder_name: "out_engine"
 
 paths:
   train:
-    path_label: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB-Reasoning/labels/labels_2d_stitched_new_version/"
-    path_image: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/images/image_stitched/"
-    path_pano: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/labels_2d_panoptic_stitched_CW_wo5s_test/"
-    path_label_3d: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/train_labels/labels_3d/"
-    path_pose: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/train_labels/labels_2d_pose_stitched_coco/"
-    pcd_file: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/siminpanoptic_3d_full/pointcloud/train_dataset_with_activity/merged_velodyne/"
-    bin_file: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/siminpanoptic_3d_full/labels/train_dataset_with_activity/"
+    path_label: "/path/to/JRDB/labels/labels_2d_stitched/"
+    path_image: "/path/to/JRDB/images/image_stitched/"
+    path_pano: "/path/to/JRDB/labels/labels_2d_panoptic_stitched/"
+    path_label_3d: "/path/to/JRDB/labels/labels_3d/"
+    path_pose: "/path/to/JRDB/labels/labels_2d_pose_stitched_coco/"
+    pcd_file: "/path/to/JRDB/pointcloud/merged_velodyne/"
+    bin_file: "/path/to/JRDB/labels_3d_bin/"
     sequences:
        - 'bytes-cafe-2019-02-07_0.json'
        - 'clark-center-2019-02-28_1.json'
@@ -49,13 +49,13 @@ paths:
 #       - 'tressider-2019-04-26_2.json'
 
   test:
-    path_label: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB-Reasoning/labels/labels_2d_stitched_test_new_version1/"
-    path_image: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/Test_images/image_stitched/"
-    path_pano: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/labels_2d_panoptic_stitched_CW_with5s_test/"
-    path_label_3d: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/test_labes/labels_3d/"
-    path_pose: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/test_labes/pose_stitched/"
-    pcd_file: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/siminpanoptic_3d_full/pointcloud/test_dataset_without_labels/merged_velodyne/"
-    bin_file: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/siminpanoptic_3d_full/labels/test_dataset_without_labels/"
+    path_label: "/path/to/JRDB/labels/labels_2d_stitched/"
+    path_image: "/path/to/JRDB/images/image_stitched/"
+    path_pano: "/path/to/JRDB/labels/labels_2d_panoptic_stitched/"
+    path_label_3d: "/path/to/JRDB/labels/labels_3d/"
+    path_pose: "/path/to/JRDB/labels/labels_2d_pose_stitched_coco/"
+    pcd_file: "/path/to/JRDB/pointcloud/merged_velodyne/"
+    bin_file: "/path/to/JRDB/labels_3d_bin/"
     sequences:
 #       - 'gates-to-clark-2019-02-28_0.json'
 #       - 'hewlett-class-2019-01-23_0.json'
