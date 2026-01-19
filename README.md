@@ -31,5 +31,24 @@ Visual Grounding (VG) and Visual Question Answering (VQA), with explicit control
 spatial and temporal complexity.
 
 The benchmark aims to facilitate systematic evaluation of reasoning-based perception
+
+## Setup
+
+### Requirements
+Python 3.8+ is recommended.
+
+Install dependencies using:
+```bash
+pip install -r requirements.txt
+
+### Download the Dataset
+
+Please download the JRDB dataset directly from the official website:
+
+👉 https://jrdb.erc.monash.edu/
+
+You need to register and obtain access in order to download the dataset.
+After downloading, set the local dataset paths in ⁠ config.local.yaml ⁠
+(or update ⁠ data_root ⁠ in ⁠ config.example.yaml ⁠) before running the code.
 models in robotics, beyond pure detection and tracking.
 
