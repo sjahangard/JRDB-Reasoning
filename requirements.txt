@@ -1,0 +1,17 @@
+python>=3.8
+
+numpy
+scipy
+pyyaml
+
+opencv-python
+open3d
+pycocotools
+
+networkx
+matplotlib
+
+inflect
+pluralizer
+
+transformers==4.52.3
