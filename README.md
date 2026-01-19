@@ -23,3 +23,13 @@
     </a>
 </div>
 
+## Overview
+JRDB-Reasoning is a difficulty-graded benchmark designed to evaluate visual reasoning
+capabilities in real-world robotic perception systems. Built on top of the JRDB dataset,
+the benchmark introduces structured spatial-temporal reasoning tasks for
+Visual Grounding (VG) and Visual Question Answering (VQA), with explicit control over
+spatial and temporal complexity.
+
+The benchmark aims to facilitate systematic evaluation of reasoning-based perception
+models in robotics, beyond pure detection and tracking.
+
