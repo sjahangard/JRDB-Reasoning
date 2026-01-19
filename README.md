@@ -23,6 +23,9 @@
     </a>
 </div>
 
+**This repo is the official implementation for the paper [JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics](https://arxiv.org/pdf/2508.10287) in AAAI 2025.**
+
+
 ## Overview
 JRDB-Reasoning is a difficulty-graded benchmark designed to evaluate visual reasoning
 capabilities in real-world robotic perception systems. Built on top of the JRDB dataset,
@@ -30,7 +33,7 @@ the benchmark introduces structured spatial-temporal reasoning tasks for
 Visual Grounding (VG) and Visual Question Answering (VQA), with explicit control over
 spatial and temporal complexity.
 
-The benchmark aims to facilitate systematic evaluation of reasoning-based perception
+The benchmark aims to facilitate systematic evaluation of reasoning-based perception models in robotics, beyond pure detection and tracking.
 
 ## Setup
 
@@ -38,7 +41,7 @@ The benchmark aims to facilitate systematic evaluation of reasoning-based percep
 Python 3.8+ is recommended.
 
 Install dependencies using:
-```bash
+
 pip install -r requirements.txt
 
 ### Download the Dataset
@@ -52,3 +55,11 @@ After downloading, set the local dataset paths in ⁠ config.local.yaml ⁠
 (or update ⁠ data_root ⁠ in ⁠ config.example.yaml ⁠) before running the code.
 models in robotics, beyond pure detection and tracking.
 
+
+## Citation
+If you find this work useful for your research, please consider citing:
+```bibtex
+@article{jahangard2025jrdbreasoning, 
+title = {JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics}, 
+author = {Jahangard, Simindokht and Mohammadi, Mehrzad and Shen, Yi and Cai, Zhixi and Rezatofighi, Hamid}, 
+journal = {arXiv preprint arXiv:2508.10287}, year = {2025} }
