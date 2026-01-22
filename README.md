@@ -62,4 +62,4 @@ If you find this work useful for your research, please consider citing:
 @article{jahangard2025jrdbreasoning, 
 title = {JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics}, 
 author = {Jahangard, Simindokht and Mohammadi, Mehrzad and Shen, Yi and Cai, Zhixi and Rezatofighi, Hamid}, 
-journal = {arXiv preprint arXiv:2508.10287}, year = {2025} }
+journal = {arXiv preprint arXiv:2508.10287}, year = {2026} }
