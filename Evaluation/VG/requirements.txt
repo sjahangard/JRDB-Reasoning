@@ -1,0 +1,15 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+Pillow>=9.0.0
+
+# Model-specific dependencies
+ultralytics>=8.0.0
+transformers>=4.40.0
+accelerate>=0.20.0
+
+# Qwen-VL specific
+qwen-vl-utils>=0.0.2
+
+# Optional: for faster inference
+flash-attn>=2.0.0

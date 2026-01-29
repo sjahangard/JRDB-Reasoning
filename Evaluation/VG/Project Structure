@@ -1,0 +1,13 @@
+visual_grounding_benchmark/
+├── config.py
+├── utils.py
+├── models/
+│   ├── __init__.py
+│   ├── base_model.py
+│   ├── yolo_model.py
+│   ├── florence_model.py
+│   ├── grounding_dino_model.py
+│   └── qwen_model.py
+├── evaluate.py
+├── requirements.txt
+└── README.md
