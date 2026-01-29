@@ -38,7 +38,7 @@ The benchmark aims to facilitate systematic evaluation of reasoning-based percep
 
 The repository is organized as follows:
 
-
+```text
 JRDB-Reasoning/
 ├─ README.md
 ├─ requirements.txt
