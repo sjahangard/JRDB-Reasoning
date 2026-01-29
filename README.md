@@ -88,7 +88,7 @@ JRDB-Reasoning/
 └─ assets/
    ├─ A_GAE.png
    └─ 000750.jpg
-
+```
 
 ## Setup
 
