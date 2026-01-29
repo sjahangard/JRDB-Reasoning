@@ -34,6 +34,61 @@ Visual Grounding (VG) and Visual Question Answering (VQA), with explicit control
 spatial and temporal complexity.
 
 The benchmark aims to facilitate systematic evaluation of reasoning-based perception models in robotics, beyond pure detection and tracking.
+## Repository Structure
+
+The repository is organized as follows:
+
+```text
+JRDB-Reasoning/
+├─ README.md
+├─ requirements.txt
+├─ .gitignore
+│
+├─ configs/
+│  └─ config.yaml
+│
+├─ src/
+│  ├─ main.py
+│  │
+│  ├─ graph/
+│  │  ├─ __init__.py
+│  │  ├─ graph.py
+│  │  ├─ geo.py
+│  │  └─ Lidar_Project2D.py
+│  │
+│  ├─ tasks/
+│  │  ├─ __init__.py
+│  │  ├─ VG_task.py
+│  │  └─ VQA_task.py
+│  │
+│  ├─ data/
+│  │  ├─ __init__.py
+│  │  ├─ Classes.py
+│  │  ├─ Category.py
+│  │  └─ open_json_file.py
+│  │
+│  ├─ utils/
+│  │  ├─ __init__.py
+│  │  ├─ global_functions.py
+│  │  ├─ combine_json.py
+│  │  └─ grandioni.py
+│  │
+│  └─ visualization/
+│     ├─ __init__.py
+│     ├─ Visualization.py
+│     └─ plot_1.py
+│
+├─ experiments/
+│  ├─ MM-DINO.py
+│  └─ sub_question_work_flow_GroundingDINO.py
+│
+├─ outputs/
+│  └─ .gitkeep
+│
+└─ assets/
+   ├─ A_GAE.png
+   └─ 000750.jpg
+
 
 ## Setup
 
