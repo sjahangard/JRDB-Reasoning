@@ -79,7 +79,9 @@ JRDB-Reasoning/
 
 ## Setup 
 ## Requirements 
-Python 3.8+ is recommended. Install dependencies using: pip install -r requirements.txt ### Download the Dataset Please download the JRDB dataset directly from the official website: 👉 https://jrdb.erc.monash.edu/ You need to register and obtain access in order to download the dataset. After downloading, set the local dataset paths in ⁠ config.local.yaml ⁠ (or update ⁠ data_root ⁠ in ⁠ config.example.yaml ⁠) before running the code. models in robotics, beyond pure detection and tracking. 
+Python 3.8+ is recommended. Install dependencies using: pip install -r requirements.txt 
+### Download the Dataset 
+Please download the JRDB dataset directly from the official website: 👉 https://jrdb.erc.monash.edu/ You need to register and obtain access in order to download the dataset. After downloading, set the local dataset paths in ⁠ config.local.yaml ⁠ (or update ⁠ data_root ⁠ in ⁠ config.example.yaml ⁠) before running the code. models in robotics, beyond pure detection and tracking. 
 ## Citation 
 If you find this work useful for your research, please consider citing:
 bibtex
