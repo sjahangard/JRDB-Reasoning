@@ -51,10 +51,8 @@ JRDB-Reasoning/
 │  ├─ main.py
 │  │
 │  ├─ graph/
-│  │  ├─ __init__.py
-│  │  ├─ graph.py
-│  │  ├─ geo.py
-│  │  └─ Lidar_Project2D.py
+│  │  ├─ __init__.py 
+│  │  └─ graph.py
 │  │
 │  ├─ tasks/
 │  │  ├─ __init__.py
@@ -69,9 +67,7 @@ JRDB-Reasoning/
 │  │
 │  ├─ utils/
 │  │  ├─ __init__.py
-│  │  ├─ global_functions.py
-│  │  ├─ combine_json.py
-│  │  └─ grandioni.py
+│  │  └─ global_functions.py
 │  │
 │  └─ visualization/
 │     ├─ __init__.py
@@ -81,9 +77,6 @@ JRDB-Reasoning/
 ├─ experiments/
 │  ├─ MM-DINO.py
 │  └─ sub_question_work_flow_GroundingDINO.py
-│
-├─ outputs/
-│  └─ .gitkeep
 │
 └─ assets/
    ├─ A_GAE.png
