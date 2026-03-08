@@ -89,11 +89,16 @@ Please download it from the official website:
 Access requires registration and approval.
 
 After downloading the dataset, update the local dataset path in `config.local.yaml` (or modify `data_root` in `config.example.yaml`) before running the code.
-## Citation 
-If you find this work useful for your research, please consider citing:
-bibtex
-@article{jahangard2025jrdbreasoning, 
-title = {JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics}, 
-author = {Jahangard, Simindokht and Mohammadi, Mehrzad and Shen, Yi and Cai, Zhixi and Rezatofighi, Hamid}, 
-journal = {arXiv preprint arXiv:2508.10287}, year = {2026} }
+
+## Citation
+
+If you find this work useful in your research, please consider citing:
+
+```bibtex
+@article{jahangard2025jrdbreasoning,
+  title   = {JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics},
+  author  = {Jahangard, Simindokht and Mohammadi, Mehrzad and Shen, Yi and Cai, Zhixi and Rezatofighi, Hamid},
+  journal = {arXiv preprint arXiv:2508.10287},
+  year    = {2026}
+}
 
