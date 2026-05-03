@@ -1,4 +1,4 @@
-# JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics
+# 🧠 JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics
 
 <div align="center">
   <img src="assets/teaser1_new.svg" width="900">
@@ -27,14 +27,14 @@
 
 ---
 
-## Overview
+## 🚀 Overview
 JRDB-Reasoning is a difficulty-graded benchmark designed to evaluate visual reasoning capabilities in real-world robotic perception systems. Built on top of the JRDB dataset, the benchmark introduces structured spatial-temporal reasoning tasks for **Visual Grounding (VG)** and **Visual Question Answering (VQA)**, with explicit control over spatial and temporal complexity.
 
 The benchmark aims to facilitate systematic evaluation of reasoning-based perception models in robotics, going beyond traditional detection and tracking.
 
 ---
 
-## Setup
+## ⚙️ Setup
 We recommend using a Conda environment with Python 3.10.
 
 ```bash
