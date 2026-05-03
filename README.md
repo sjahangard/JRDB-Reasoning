@@ -34,52 +34,17 @@ spatial and temporal complexity.
 
 The benchmark aims to facilitate systematic evaluation of reasoning-based perception models in robotics, beyond pure detection and tracking.
 
-## Repository Structure
-
-The repository is organized as follows:
-
-```text
-JRDB-Reasoning/
-├─ README.md
-├─ requirements.txt
-├─ .gitignore
-│
-├─ configs/
-│  └─ config.yaml
-│
-├─ src/
-│  ├─ main.py
-│  │
-│  ├─ graph/
-│  │  ├─ __init__.py 
-│  │  └─ graph.py
-│  │
-│  ├─ tasks/
-│  │  ├─ __init__.py
-│  │  ├─ VG_task.py
-│  │  └─ VQA_task.py
-│  │
-│  ├─ data/
-│  │  ├─ __init__.py
-│  │  ├─ Classes.py
-│  │  └─ Category.py
-│  │
-│  └─ utils/
-│     ├─ __init__.py
-│     └─ global_functions.py
-│
-├─ experiments/
-│  ├─ MM-DINO.py
-│  └─ sub_question_work_flow_GroundingDINO.py
-│
-└─ assets/
-   ├─ A_GAE.png
-   └─ teaser1_new.svg
-```
 
 ## Setup 
 ## Requirements 
-Python 3.8+ is recommended. Install dependencies using: pip install -r requirements.txt 
+We recommend using a Conda environment with Python 3.10.
+
+```bash
+conda create -n stsg_env python=3.10 -y
+conda activate stsg_env
+
+pip install --upgrade pip
+pip install -r requirements.txt
 ### Download the Dataset
 The JRDB dataset is not included in this repository.  
 Please download it from the official website:
