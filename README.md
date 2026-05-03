@@ -44,7 +44,7 @@ conda activate stsg_env
 pip install --upgrade pip
 pip install -r requirements.txt
 
-
+```
 ## Download the Dataset
 The JRDB dataset is not included in this repository.  
 Please download it from the official website:
