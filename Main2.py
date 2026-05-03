@@ -4,11 +4,11 @@ import pickle
 from datetime import date
 
 import yaml
-
-from graph import SpatialTemporalSceneGraph
-from VG_task import VG_task
-from VQA_task import VQA_task
-from global_functions import (
+from jrdb_reasoning.graph import *
+from jrdb_reasoning.graph import SpatialTemporalSceneGraph
+from jrdb_reasoning.VG_task import VG_task
+from jrdb_reasoning.VQA_task import VQA_task
+from jrdb_reasoning.global_functions import (
     create_data_dict,
     choose_question_type,
     update_data_structure_all_slots,
@@ -23,6 +23,10 @@ def load_config(path="./config.yaml"):
 
 def load_graph(pkl_path):
     with open(pkl_path, "rb") as file:
+        import sys
+        import jrdb_reasoning.graph as graph
+
+        sys.modules['graph'] = graph
         return pickle.load(file)
 
 
