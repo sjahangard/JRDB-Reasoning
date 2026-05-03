@@ -52,7 +52,7 @@ The generated scene graphs are stored in the `seq_graphs` folder. Please update 
 git clone https://github.com/sjahangard/JRDB-Reasoning.git
 cd JRDB-Reasoning
 
-python Main.py
+python Main2.py
 
 ```
 
