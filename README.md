@@ -57,14 +57,10 @@ python Main.py
 ```
 
 ## Download the Dataset
-The JRDB dataset is not included in this repository.  
+The whole JRDB dataset is not included in this repository.  
 Please download it from the official website:
 
 👉 https://jrdb.erc.monash.edu/
-
-Access requires registration and approval.
-
-After downloading the dataset, update the local dataset path in `config.local.yaml` (or modify `data_root` in `config.example.yaml`) before running the code.
 
 ## Citation
 
