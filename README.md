@@ -45,6 +45,17 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 ```
+## Quick Start
+The generated scene graphs are stored in the `seq_graphs` folder. Please update the required settings in `config.yaml`; the corresponding JSON files will be generated in the `out_engine` folder.
+
+```bash
+git clone https://github.com/sjahangard/JRDB-Reasoning.git
+cd JRDB-Reasoning
+
+python Main.py
+
+```
+
 ## Download the Dataset
 The JRDB dataset is not included in this repository.  
 Please download it from the official website:
