@@ -60,9 +60,12 @@ After downloading the dataset, update the local dataset path in `config.local.ya
 If you find this work useful in your research, please consider citing:
 
 ```bibtex
-@article{jahangard2025jrdbreasoning,
-  title   = {JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics},
-  author  = {Jahangard, Simindokht and Mohammadi, Mehrzad and Shen, Yi and Cai, Zhixi and Rezatofighi, Hamid},
-  journal = {arXiv preprint arXiv:2508.10287},
-  year    = {2026}
+@article{jahangard2026jrdb,
+  title={JRDB-Reasoning: A Difficulty-Graded Benchmark for Visual Reasoning in Robotics},
+  author={Jahangard, Simindokht and Mohammadi, Mehrzad and Shen, Yi and Cai, Zhixi and Rezatofighi, Hamid},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={7},
+  pages={5276--5286},
+  year={2026}
 }
