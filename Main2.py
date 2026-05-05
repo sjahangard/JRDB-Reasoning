@@ -1,179 +1,132 @@
+# pip install transformers==4.52.3
+
 import os
-import json
 import pickle
-from datetime import date
-
 import yaml
-from jrdb_reasoning.graph import *
-from jrdb_reasoning.graph import SpatialTemporalSceneGraph
-from jrdb_reasoning.VG_task import VG_task
-from jrdb_reasoning.VQA_task import VQA_task
-from jrdb_reasoning.global_functions import (
-    create_data_dict,
-    choose_question_type,
-    update_data_structure_all_slots,
-    ensure_folder_exists,
-)
+from datetime import date
+from collections import defaultdict
+
+import networkx as nx
+import matplotlib.pyplot as plt
+
+from global_functions import *
+from graph import *
+from VG_task import *
+from VQA_task import *
 
 
-def load_config(path="./config.yaml"):
-    with open(path, "r") as file:
-        return yaml.safe_load(file)
+# ─── Scene Graph I/O ──────────────────────────────────────────────────────────
+
+def save_scene_graph(scene_graph, seq, folder):
+    os.makedirs(folder, exist_ok=True)
+    path = os.path.join(folder, f"{seq}.pkl")
+    with open(path, "wb") as f:
+        pickle.dump(scene_graph, f)
+    print(f"✅ SceneGraph saved: {path}")
+
+
+def load_scene_graph(seq, folder):
+    path = os.path.join(folder, f"{seq}.pkl")
+    with open(path, "rb") as f:
+        scene_graph = pickle.load(f)
+    print(f"✅ SceneGraph loaded: {path}")
+    return scene_graph
 
 
 def load_graph(pkl_path):
-    with open(pkl_path, "rb") as file:
-        import sys
-        import jrdb_reasoning.graph as graph
-
-        sys.modules['graph'] = graph
-        return pickle.load(file)
+    with open(pkl_path, "rb") as f:
+        return pickle.load(f)
 
 
-def save_json(data, output_folder, file_name):
-    ensure_folder_exists(output_folder)
+# ─── Config ───────────────────────────────────────────────────────────────────
 
-    file_path = os.path.join(output_folder, f"{file_name}.json")
-    with open(file_path, "w") as json_file:
-        json.dump(data, json_file, indent=2)
+def load_config(path="config.yaml"):
+    with open(path, "r") as f:
+        return yaml.safe_load(f)
 
-    print(f"✅ Output saved: {file_path}")
-
-
-def process_vg(scene_graph, config, data_dict, data_points, n_samples):
-    all_samples = []
-
-    for _ in range(n_samples):
-        data_points = VG_task(
-            scene_graph,
-            config["S"],
-            config["T"],
-            config["target_Q"],
-            config["modality_type"],
-            data_dict,
-            data_points,
-            config["Incremental"],
-        )
-
-        if data_points:
-            all_samples.extend(data_points)
-
-    return all_samples
-
-
-def process_vqa(scene_graph, config, data_dict, data_points):
-    question_type = choose_question_type()
-    all_samples = []
-
-    if question_type == "Count":
-        data_points = VG_task(
-            scene_graph,
-            config["S"],
-            config["T"],
-            config["target_Q"],
-            config["modality_type"],
-            data_dict,
-            data_points,
-            config["Incremental"],
-        )
-
-        updated_samples = update_data_structure_all_slots(data_points, "Count")
-
-        if updated_samples:
-            all_samples.extend(updated_samples)
-
-    elif question_type == "Wh":
-        print("You selected a WH-type question.")
-
-        data_points = VQA_task(
-            scene_graph,
-            config["S"],
-            config["T"],
-            config["target_Q"],
-            config["modality_type"],
-            data_dict,
-            data_points,
-            config["Incremental"],
-        )
-
-        updated_samples = update_data_structure_all_slots(data_points, "Wh")
-
-        if updated_samples:
-            all_samples.extend(updated_samples)
-
-    else:
-        print(f"⚠️ Unknown question type: {question_type}")
-
-    return all_samples
-
+# ─── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     config = load_config()
     print(config)
 
-    set_name = config["set"]
-    task_type = config["task_type"]
-    n_samples = config["N"]
-    output_folder = config["folder_name"]
+    set_          = config["set"]
+    task_type     = config["task_type"]
+    S             = config["S"]
+    T             = config["T"]
+    target_Q      = config["target_Q"]
+    modality_type = config["modality_type"]
+    N             = config["N"]
+    Incremental   = config["Incremental"]
+    folder_name   = config["folder_name"]
 
-    if config["S"] == "1" and config["target_Q"] == "human&object":
-        print("⚠️ Warning: 'S=1' and 'target_Q=human&object' cannot be used together.")
+    if S == "1" and target_Q == "human&object":
+        print("⚠️  Warning: 'S=1' and 'target_Q=human&object' are incompatible.")
         return
 
-    path_config = config["paths"][set_name]
-    sequences = path_config.get("sequences", [])
+    path_config = config["paths"][set_]
+    sequences   = path_config.get("sequences", [])
+    print(f"Running on {set_} set with {len(sequences)} sequences.")
 
-    print(f"Running on {set_name} set with {len(sequences)} sequences loaded.")
+    graph_folder   = "seq_graphs"
+    data_points_big = []
 
-    final_data_points = []
-
-    for seq in sequences:
-        data_points = []
-
-        data_dict = create_data_dict(
-            Set=set_name,
-            task_type=task_type,
-            S=config["S"],
-            T=config["T"],
-            target_Q=config["target_Q"],
-            modality_type=config["modality_type"],
-            seq_name=seq,
-        )
-
-        graph_path = f"./seq_graphs/{seq}.pkl"
-        scene_graph = load_graph(graph_path)
-
-        if task_type == "VG":
-            samples = process_vg(
-                scene_graph,
-                config,
-                data_dict,
-                data_points,
-                n_samples,
-            )
-
-        elif task_type == "VQA":
-            samples = process_vqa(
-                scene_graph,
-                config,
-                data_dict,
-                data_points,
-            )
-
-        else:
-            print(f"⚠️ Unknown task type: {task_type}")
+    for graph_file in os.listdir(graph_folder):
+        if not graph_file.endswith(".pkl"):
             continue
 
-        final_data_points.extend(samples)
+        seq_name = graph_file.replace(".pkl", "")
+        scene_graph = load_graph(os.path.join(graph_folder, graph_file))
 
-        today = date.today()
-        file_name = (
-            f"{task_type}_T={config['T']}_S={config['S']}_"
-            f"{config['target_Q']}_{config['modality_type']}_"
-            f"{set_name}_{n_samples}samples_{seq}_{today}"
+        data_dict = create_data_dict(
+            Set=set_, task_type=task_type, S=S, T=T,
+            target_Q=target_Q, modality_type=modality_type, seq_name=seq_name,
         )
 
-        save_json(final_data_points, output_folder, file_name)
+        data_points = []
+
+        if task_type == "VG":
+            for _ in range(N):
+                data_points = VG_task(
+                    scene_graph, S, T, target_Q, modality_type,
+                    data_dict, data_points, Incremental,
+                )
+            if data_points:
+                data_points_big.extend(data_points)
+
+        elif task_type == "VQA":
+            type_question = "Wh"  # or choose_question_type()
+
+            if type_question == "Count":
+                data_points = VG_task(
+                    scene_graph, S, T, target_Q, modality_type,
+                    data_dict, data_points, Incremental,
+                )
+                updated = update_data_structure_all_slots(data_points, "Count")
+                if updated:
+                    data_points_big.extend(updated)
+
+            elif type_question == "Wh":
+                print("Selected WH-type question.")
+                data_points = VQA_task(
+                    scene_graph, S, T, target_Q, modality_type,
+                    data_dict, data_points, Incremental,
+                )
+                updated = update_data_structure_all_slots(data_points, "Wh")
+                if data_points:
+                    data_points_big.extend(updated)
+
+        # ── Save output ───────────────────────────────────────────────────────
+        today = date.today()
+        special_name = (
+            f"{task_type}_T={T}_S={S}_{target_Q}_{modality_type}"
+            f"_{set_}_{N}samples_{seq_name}_{today}"
+        )
+        ensure_folder_exists(folder_name)
+        file_path = os.path.join(folder_name, f"{special_name}.json")
+        with open(file_path, "w") as f:
+            json.dump(data_points_big, f)
+        print(f"✅ Saved: {file_path}")
 
 
 if __name__ == "__main__":
