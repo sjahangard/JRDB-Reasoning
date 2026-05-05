@@ -35,7 +35,7 @@ The benchmark aims to facilitate systematic evaluation of reasoning-based percep
 ---
 
 ## ⚙️ Setup
-We recommend using a Conda environment with Python 3.10.
+We recommend using a Conda environment with Python 3.10. Please use the provided environment.yml for evaluation.
 
 ```bash
 conda create -n stsg_env python=3.10 -y
