@@ -45,8 +45,12 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 ```
+
 ## Quick Start
-The generated scene graphs are stored in the `seq_graphs` folder. Please update the required settings in `config.yaml`; the corresponding JSON files will be generated in the `out_engine` folder.
+
+The precomputed scene graphs are stored in the `seq_graphs` folder. Please update the required settings in `config.yaml`; the corresponding JSON files will be generated in the `out_engine` folder.
+
+If you would like to generate the scene graphs from scratch, you can use `build_scene_graph.py`. To do this, please download the required JRDB annotations from the official JRDB website and set the corresponding annotation and data paths in `config.yaml`.
 
 ```bash
 git clone https://github.com/sjahangard/JRDB-Reasoning.git
