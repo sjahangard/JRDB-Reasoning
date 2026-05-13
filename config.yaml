@@ -12,7 +12,7 @@ paths:
   train:
     path_label: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB-Reasoning/labels/labels_2d_stitched_new_version/"
     path_image: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/images/image_stitched/"
-    path_pano: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/labels_2d_panoptic_stitched_CW_wo5s_test/"
+    path_pano: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/labels_2d_panoptic/"
     path_label_3d: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/train_labels/labels_3d/"
     path_pose: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/train_labels/labels_2d_pose_stitched_coco/"
     pcd_file: "/Users/sjah0003/PycharmProjects/pythonProject_visulizastion/JRDB2022/siminpanoptic_3d_full/pointcloud/train_dataset_with_activity/merged_velodyne/"
